@@ -1,4 +1,4 @@
-// Package errgroup provides synchronization, error propagation, and Context
+// Package concurrentgroup provides synchronization, error propagation, and Context
 // cancelation for groups of goroutines working on subtasks of a common task.
 package concurrentgroup
 
