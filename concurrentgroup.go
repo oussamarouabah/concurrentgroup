@@ -26,6 +26,7 @@ type Group struct {
 	err     error
 }
 
+// done this function is called by goroutines when they exit
 func (g *Group) done() {
 	if g.sem != nil {
 		<-g.sem
@@ -33,7 +34,7 @@ func (g *Group) done() {
 	g.wg.Done()
 }
 
-// WithContext returns a new Group and an associated Context derived from ctx.
+// NewGroup returns a new Group and an associated Context derived from ctx.
 //
 // The derived Context is canceled the first time a function passed to Go
 // returns a non-nil error or the first time Wait returns, whichever occurs
